@@ -71,12 +71,3 @@ export class Node {
         this.next = null;
     }
 }
-
-const list = new LinkedList();
-list.append('dog')
-list.append('cat')
-list.prepend('fish')
-list.prepend('bird')
-list.append('bear')
-list.prepend('shark')
-console.log(list.getHead())

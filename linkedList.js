@@ -38,6 +38,8 @@ export class LinkedList {
         }
     }
 
+
+    // Create a method to get total number of the nodes in the list
     getSize() {
         let size = 0;
         let temp = this.head;
@@ -54,6 +56,12 @@ export class LinkedList {
 
         return size;
     }
+
+    // Create a method to get the first node of the list
+    getHead() {
+        if (this.head === null) return null;
+        return this.head;
+    }
 }  
 
 // Creat a class for a node
@@ -63,3 +71,12 @@ export class Node {
         this.next = null;
     }
 }
+
+const list = new LinkedList();
+list.append('dog')
+list.append('cat')
+list.prepend('fish')
+list.prepend('bird')
+list.append('bear')
+list.prepend('shark')
+console.log(list.getHead())

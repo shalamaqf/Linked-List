@@ -37,6 +37,23 @@ export class LinkedList {
             this.head = newNode
         }
     }
+
+    getSize() {
+        let size = 0;
+        let temp = this.head;
+    
+        // Check if the list is empty
+        if (this.head === null && this.tail === null) {
+            size = 0;
+        }
+
+        while(temp !== null) {
+            size++;
+            temp = temp.next;
+        }
+
+        return size;
+    }
 }  
 
 // Creat a class for a node

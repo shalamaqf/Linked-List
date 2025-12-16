@@ -57,10 +57,18 @@ export class LinkedList {
         return size;
     }
 
+
     // Create a method to get the first node of the list
     getHead() {
         if (this.head === null) return null;
         return this.head;
+    }
+
+
+    // Create a method to get the last node of the list
+    getTail() {
+        if (this.tail === null) return null;
+        return this.tail;
     }
 }  
 

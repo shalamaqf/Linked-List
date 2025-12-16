@@ -13,16 +13,31 @@ export class LinkedList {
         newNode.next = null;
 
         // Set the node as head and tail if the list is empty
-        if (list.head === null && list.tail === null) {
-            list.head = newNode;
-            list.tail = newNode;
+        if (this.head === null && this.tail === null) {
+            this.head = newNode;
+            this.tail = newNode;
         } else {
             // Else, set the tail to the new node
-            list.tail.next = newNode;
-            list.tail = newNode;
+            this.tail.next = newNode;
+            this.tail = newNode;
         }
     }
-}
+
+
+    // Create a method to prepend a node to the start of the list
+    prepend(value) {
+        const newNode = new Node();
+        newNode.value = value;
+        newNode.next = this.head;
+
+        if (this.head === null && this.tail === null) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.head = newNode
+        }
+    }
+}  
 
 // Creat a class for a node
 export class Node {

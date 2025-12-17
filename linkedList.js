@@ -121,6 +121,25 @@ export class LinkedList {
         this.tail = temp;
         temp.next = null;
     } 
+
+
+    /* 
+        Create a method to return a true if value is in the list,
+        and false if the value isn't in the list.
+    */
+    contains(value) {
+        if (this.head === null && this.tail === null) return 'List is empty';
+
+        let temp = this.head;
+        while(temp !== null) {
+            if (temp.value === value) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
 }  
 
 // Creat a class for a node

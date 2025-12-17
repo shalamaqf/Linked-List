@@ -132,9 +132,7 @@ export class LinkedList {
 
         let temp = this.head;
         while(temp !== null) {
-            if (temp.value === value) {
-                return true;
-            }
+            if (temp.value === value) return true;
             temp = temp.next;
         }
         return false;

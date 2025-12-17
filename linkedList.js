@@ -138,6 +138,7 @@ export class LinkedList {
         return false;
     }
 
+
     /*
         Create a method to find a value and return it,
         if it's not found, return null.
@@ -151,7 +152,22 @@ export class LinkedList {
             temp = temp.next;
         }
         return null;
-    }   
+    }
+    
+
+    // Create a method to represent nodes as a string
+    toString() {
+        if (this.head === null && this.tail === null) return 'List is empty';
+
+        let string = ''
+        let temp = this.head;
+        while(temp !== null) {
+            string += ` ( ${temp.value} ) ->`;
+            temp = temp.next;
+        }
+        string += 'null';
+        return string;
+    }
 
 }  
 

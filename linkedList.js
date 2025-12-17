@@ -241,7 +241,7 @@ export class LinkedList {
 }  
 
 // Creat a class for a node
-export class Node {
+class Node {
     constructor() {
         this.value = null;
         this.next = null;

@@ -46,7 +46,7 @@ export class LinkedList {
     
         // Check if the list is empty
         if (this.head === null && this.tail === null) {
-            size = 0;
+            return 'List is empty';
         }
 
         while(temp !== null) {
@@ -60,14 +60,14 @@ export class LinkedList {
 
     // Create a method to get the first node of the list
     getHead() {
-        if (this.head === null) return null;
+        if (this.head === null) return 'List is empty';
         return this.head;
     }
 
 
     // Create a method to get the last node of the list
     getTail() {
-        if (this.tail === null) return null;
+        if (this.tail === null) return 'List is empty';
         return this.tail;
     }
 
@@ -75,7 +75,7 @@ export class LinkedList {
     // Create a method to get the a node in spesific 'index'
     at(index) {
         // Check if list is empty
-        if (this.head === null && this.tail === null) return null;
+        if (this.head === null && this.tail === null) return 'List is empty';
 
         // Return head
         if (index === 0) {

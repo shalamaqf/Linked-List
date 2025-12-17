@@ -162,13 +162,46 @@ export class LinkedList {
         let string = ''
         let temp = this.head;
         while(temp !== null) {
-            string += ` ( ${temp.value} ) ->`;
+            string += `( ${temp.value} ) -> `;
             temp = temp.next;
         }
         string += 'null';
         return string;
     }
 
+
+    // Create a method to insert a value at spesific index in the list
+    insertAt(value, index) {
+        // Check the index out of bound
+        const listLength = this.getSize();
+        if (index > listLength || index < 0) return 'Index is out of bound.';
+
+        // Set new node as head if index 0
+        if (index === 0) {
+            this.prepend(value);
+            return;
+        }
+
+        // Set the new node as tail if index is the last node
+        if (index === (listLength)) {
+            this.append(value);
+            return;
+        }
+
+        // Create a new node and set its value
+        const newNode = new Node();
+        newNode.value = value;
+        newNode.next = null;
+
+        // Traverse to the spesific index
+        let temp = this.head;
+        for (let i = 0; i < index - 1; i++) {
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
 }  
 
 // Creat a class for a node

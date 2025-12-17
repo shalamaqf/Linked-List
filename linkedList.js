@@ -140,6 +140,21 @@ export class LinkedList {
         return false;
     }
 
+    /*
+        Create a method to find a value and return it,
+        if it's not found, return null.
+    */
+    find(value) {
+        if (this.head === null && this.tail === null) return 'List is empty';
+
+        let temp = this.head;
+        while(temp !== null) {
+            if (temp.value === value) return temp;
+            temp = temp.next;
+        }
+        return null;
+    }   
+
 }  
 
 // Creat a class for a node

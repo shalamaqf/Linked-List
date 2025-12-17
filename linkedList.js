@@ -70,6 +70,35 @@ export class LinkedList {
         if (this.tail === null) return null;
         return this.tail;
     }
+
+    
+    // Create a method to get the a node in spesific 'index'
+    at(index) {
+        // Check if list is empty
+        if (this.head === null && this.tail === null) return null;
+
+        // Return head
+        if (index === 0) {
+            return this.head;
+        }
+
+        // Return tail
+        const listLength = this.getSize();
+        if (index === (listLength - 1)) {
+            return this.tail;
+        }
+
+        // Check if index is out of bound
+        if (index >= listLength) return 'Index is out of bound.';
+
+        // Get the node in spesific index
+        let current = this.head;
+        for (let i = 0; i < index; i++) {
+            current = current.next;
+        }
+
+        return current;
+    }
 }  
 
 // Creat a class for a node

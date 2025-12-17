@@ -99,6 +99,28 @@ export class LinkedList {
 
         return current;
     }
+
+
+    // Create a method to pop/delete the last element
+    pop() {
+        if (this.head === null && this.tail === null) return 'List is empty';
+
+        if (this.head === this.tail) {
+            this.head = null;
+            this.tail = null;
+            return;
+        }
+
+        let temp = this.head;
+        let current = temp.next;
+        while(current.next !== null) {
+            temp = temp.next;
+            current = temp.next;
+        }
+
+        this.tail = temp;
+        temp.next = null;
+    } 
 }  
 
 // Creat a class for a node

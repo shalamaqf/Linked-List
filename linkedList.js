@@ -202,6 +202,42 @@ export class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
     }
+
+
+    // Create a method to remove a node at spesific index in the list
+    removeAt(index) {
+        if (this.head === null && this.tail === null) return 'List is empty';
+
+        const listLength = this.getSize();
+        let temp = this.head;
+        let current = temp.next;
+
+        // Check if index is 0, then set the new head
+        if (index === 0) {
+            this.head = temp.next;
+            temp.next = null;
+            return;
+        }
+
+        // Check if index is out of bound
+        if (index === listLength || index < 0) return 'Index is out of bound.'
+
+        // Traverse the list, find the node, and remove it
+        for (let i = 0; i < index - 1; i++) {
+            temp = temp.next;
+            current = temp.next;
+        }
+
+        // Check if current is the tail
+        if (current === this.tail) {
+            this.tail = temp;
+            temp.next  = null;
+            return;
+        }
+
+        temp.next = current.next;
+        current.next = null;
+    }
 }  
 
 // Creat a class for a node
